@@ -357,7 +357,7 @@ function generateIssueTitle(JSONObj) {
 
 // Creates Issue Body
 function generateIssueBody(JSONObj) {
-	let body = "## Living HHS Open Data Plan — Feedback to HHS\n\n";
+	let body = "## SHARE IT Repository Discovery Form\n\n";
 
 	// body += `**Submitted by:** ${JSONObj["Name"] || "Anonymous"}\n`;
 	// body += `**Email:** ${JSONObj["Email"] || "Not provided"}\n\n`;
