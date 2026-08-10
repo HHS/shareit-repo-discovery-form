@@ -545,7 +545,7 @@ async function emailFile(event) {
 		const body = `Hello,\n\nI have submitted suggestions for Living HHS Open Data Plan:\n\n${jsonString}\n\nThank you!`;
 
 		// const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
-		const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
+		const recipients = ["opensource@cms.hhs.gov"];
 
 		const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
