@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Title of the Web Form",
+    "description": "Here is the description of the web form. Using schema.json, this generates each of the form components, including the title, description, and each of the questions. The form is generated using the USWDS Form.io library.",
+    "type": "object",
+    "properties": {
+        "items": {
+            "Question 1: Text field": {
+                "type": "string",
+                "description": "Here is the description! type: string"
+            },
+        "Question 2: Multiple choice": {
+            "type": "string",
+            "enum": [
+                "Ideation",
+                "Development",
+                "Alpha",
+                "Beta",
+                "Release Candidate",
+                "Production",
+                "Archival"
+            ],
+            "description": "Development status of the project"
+        }
+        }
+    },
+    "required": [
+        "Question 1: Text field",
+        "Question 2: Multiple choice"
+    ]
+}

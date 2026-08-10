@@ -1,0 +1,98 @@
+body {
+    margin: 20px;
+}
+
+textarea {
+    margin-bottom: 10px;
+}
+
+#auto-generation {
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: lightgray;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+#github-url-form {
+    margin-top: 25px;
+    width: 100%;
+}
+
+#repo-url {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+}
+
+#repo-url-button {
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#notification {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    animation: slideDown 0.3s ease;
+}
+
+#notification-message {
+    margin: 0;
+    padding-right: 20px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.local-actions,
+.submission-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.action {
+    margin-bottom: 1.5%;
+    width: 100%
+}
+
+.copy,
+.download,
+.formio-button-add-row {
+    display: block;
+    width: 100%;
+}
+
+.issue,
+.email {
+    display: block;
+    width: 100%;
+}
+
+#copy {
+    margin-right: 10px;
+}
