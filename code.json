@@ -1,0 +1,65 @@
+{
+  "name": "shareit-repo-discovery-form",
+  "description": "Static web form for collecting source code repository information",
+  "status": "Development",
+  "permissions": {
+    "licenses": [
+      {
+        "name": "CC0-1.0",
+        "URL": "https://github.com/HHS/shareit-repo-discovery-form/blob/main/LICENSE"
+      }
+    ],
+    "usageType": [
+      "openSource"
+    ]
+  },
+  "organization": "United States Department of Health and Human Services",
+  "repositoryURL": "https://github.com/HHS/shareit-repo-discovery-form",
+  "repositoryVisibility": "public",
+  "homepageURL": "https://hhs.github.io/shareit-repo-discovery-form/",
+  "vcs": "git",
+  "laborHours": 10,
+  "reuseFrequency": {
+    "forks": 0,
+    "clones": 0
+  },
+  "languages": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "maintenance": "internal",
+  "contractNumber": [
+    "0"
+  ],
+  "SBOM": "https://github.com/HHS/shareit-repo-discovery-form/network/dependencies",
+  "relatedCode": [
+    {
+      "name": "Web Form Template",
+      "URL": "https://github.com/DSACMS/web-form-template",
+      "isGovernmentRepo": true
+    }
+  ],
+  "reusedCode": [
+    {
+      "name": "Web Form Template",
+      "URL": "https://github.com/DSACMS/web-form-template"
+    }
+  ],
+  "date": {
+    "created": "2026-08-10T20:03:21Z",
+    "lastModified": "2026-08-10T21:28:41Z",
+    "metadataLastUpdated": "2026-08-11T17:39:17.074Z"
+  },
+  "tags": [
+    "open source",
+    "form",
+    "discovery"
+  ],
+  "contact": {
+    "email": "opensource@cms.hhs.gov",
+    "name": "OSPG"
+  },
+  "feedbackMechanism": "https://github.com/HHS/shareit-repo-discovery-form/issues",
+  "AIUseCaseID": "0"
+}
