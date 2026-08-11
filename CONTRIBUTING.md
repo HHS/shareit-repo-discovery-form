@@ -36,14 +36,14 @@ We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow
 2.  Check out the `main` branch
 3.  Create a feature branch
 4.  Write changes
-5.  From your branch, make a pull request against `HHS/living-hhs-open-data-plan/main`
+5.  From your branch, make a pull request against `HHS/shareit-repo-discovery-form/main`
 6.  Work with repo maintainers to get your change reviewed
-7.  Wait for your change to be pulled into `HHS/living-hhs-open-data-plan/main`
+7.  Wait for your change to be pulled into `HHS/shareit-repo-discovery-form/main`
 8.  Delete your feature branch
 
 ### Writing Issues
 
-If you would like to comment on the Living HHS Open Data Plan, please let us know by filing an **[issue on our GitHub repository](https://hhs.github.io/lodp-UX/).**
+If you would like to register a repository, please let us know by filing an **[issue on our GitHub repository](https://hhs.github.io/shareit-repo-discovery-form/).**
 
 ### Writing Pull Requests
 

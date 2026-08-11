@@ -1,6 +1,6 @@
 # COMMUNITY.md
 
-{{ cookiecutter.project_repo_name }} is supported by a dedicated team of individuals fulfilling various roles to ensure its success, security, and alignment with government standards and agency goals.
+SHARE IT Discovery Form is supported by a dedicated team of individuals fulfilling various roles to ensure its success, security, and alignment with government standards and agency goals.
 
 ## Project Members
 
@@ -10,18 +10,21 @@ Roles to include, but not limited to: Project Owner, Technical Lead, Developers/
 
 | Role   | Name    | Affiliation    |
 | :----- | :------ | :------------- |
-| {role} | {names} | {affiliations} |
+| Open Source Software Engineer | Natalia Luzuriaga | CMS/OHTP/OSPG |
+| Open Source Software Engineer | Dinne Kopelevich | CMS/OHTP/OSPG |
+| Open Source Software Engineer | Sachin Panayil | CMS/OHTP/OSPG |
+| Director of Open Source Program Group | Remy DeCausemaker | CMS/OHTP/OSPG |
 
 <!-- TODO: A CODEOWNERS.md file is available in .github to define individuals responsible for specific parts of the codebase. Provide a reference to this file if used:
 
 See [CODEOWNERS.md](.github/CODEOWNERS.md) for a list of those responsible for the code and documentation in this repository.
 -->
 
-See [Community Guidelines](#{{cookiecutter.project_name}}-open-source-community-guidelines) on principles and guidelines for participating in this open source project.
+See [Community Guidelines](#shareit-repo-discovery-form-open-source-community-guidelines) on principles and guidelines for participating in this open source project.
 
 ## Roles & Responsibilities
 
-The members of {{ cookiecutter.project_repo_name }} community are responsible for guiding its development, ensuring quality standards, and fostering a collaborative environment. They play a vital role in making decisions about code contributions, handling releases, and ensuring the project meets its goals and objectives. Below is a list of the key members and their specific roles and responsibilities. We are eagerly seeking individuals who are interested in joining the community and helping shape and support these roles.
+The members of SHARE IT Discovery Form community are responsible for guiding its development, ensuring quality standards, and fostering a collaborative environment. They play a vital role in making decisions about code contributions, handling releases, and ensuring the project meets its goals and objectives. Below is a list of the key members and their specific roles and responsibilities. We are eagerly seeking individuals who are interested in joining the community and helping shape and support these roles.
 
 ### Maintainers:
 
@@ -71,13 +74,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more details on the release process.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/haseebmalik18">
-                    <img src="https://avatars.githubusercontent.com/u/118837269?v=4" width="100;" alt="haseebmalik18"/>
-                    <br />
-                    <sub><b>Haseeb Malik</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/decause-gov">
                     <img src="https://avatars.githubusercontent.com/u/107957201?v=4" width="100;" alt="decause-gov"/>
                     <br />
@@ -97,7 +93,7 @@ TODO: Who are the past maintainers or contributors who previously played signifi
 We'd like to acknowledge the following individuals for their past contributions of this project:
 -->
 
-## {{ cookiecutter.project_name }} Open Source Community Guidelines
+## SHARE IT Discovery Form Open Source Community Guidelines
 
 This document contains principles and guidelines for participating in the {{ cookiecutter.project_name }} open source community.
 

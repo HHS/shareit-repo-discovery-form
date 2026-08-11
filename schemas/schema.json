@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "SHARE IT source code repository Discovery Form",
+    "title": "SHARE IT Source Code Repository Discovery Form",
     "description": "<p>This intake form serves as a simple registry for gathering basic informtion about a source code repository. Responses will be used the agency to help repository managers and owners comply with the SHARE IT Act of 2024.</p>",
     "type": "object",
     "properties": {
@@ -56,6 +56,7 @@
             },
             "Last Updated": {
                 "type": "string",
+                "format": "date",
                 "description": "Date when the repository was last updated"
             }
         }

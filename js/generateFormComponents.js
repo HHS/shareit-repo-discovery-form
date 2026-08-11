@@ -61,6 +61,9 @@ function determineType(field) {
 		if (field.format == "date-time") {
 			return "datetime";
 		}
+		if (field.format === "date") {
+        return "date";
+    	}
 		return "textfield";
 	}
 }
@@ -175,6 +178,34 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 				validate
 			};
 		case "datetime":
+			return {
+				label: fieldName,
+				tableView: false,
+				datePicker: {
+					disableWeekends: false,
+					disableWeekdays: false
+				},
+				enableTime: false,
+				validateWhenHidden: false,
+				key: fieldName,
+				type: "datetime",
+				input: true,
+				widget: {
+					type: "calendar",
+					displayInTimezone: "viewer",
+					locale: "en",
+					useLocaleSettings: false,
+					allowInput: true,
+					mode: "single",
+					noCalendar: false,
+					format: "yyyy-MM-dd",
+					disableWeekends: false,
+					disableWeekdays: false,
+				},
+				description: fieldObject["description"],
+				validate
+			};
+		case "date":
 			return {
 				label: fieldName,
 				tableView: false,
@@ -324,20 +355,6 @@ async function createFormComponents() {
 	createFormHeading(jsonData["title"], jsonData["description"]);
 
 	components = createAllComponents(jsonData);
-
-	//Form text box to input GitHub API Key
-	// components.push({
-	// 	"label": "GitHub API Key (optional)",
-	// 	"disableSortingAndFiltering": false,
-	// 	"tableView": true,
-	// 	"key": "gh_api_key",
-	// 	"type": "password",
-	// 	"input": true,
-	// 	"description": "Generate a Github API Key from here: https://github.com/settings/tokens/new .\n\
-	// 		The token should have these permissions: \n\
-	// 		- Contents: read & write \n- Workflows: read & write\
-	// 		- Pull requests: read & write"
-	// });
 
 	// Add submit button to form
 	components.push({

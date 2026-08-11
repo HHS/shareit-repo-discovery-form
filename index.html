@@ -6,68 +6,70 @@
 <head>
 	<title>code.json metadata</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" href="css/styles.css">
-
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.1.0/css/uswds.min.css">
 	<link rel="stylesheet" href="https://cdn.form.io/js/formio.form.min.css">
 	<link rel="stylesheet" href="https://cdn.form.io/uswds/uswds.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.1.0/js/uswds.min.js"></script>
-	<script src="https://cdn.form.io/js/formio.form.min.js"></script>
-	<script src="https://cdn.form.io/uswds/uswds.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.1.0/js/uswds.min.js" defer></script>
+	<script src="https://cdn.form.io/js/formio.form.min.js" defer></script>
+	<script src="https://cdn.form.io/uswds/uswds.min.js" defer></script>
+	
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/styles.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Render the form -->
 	<script src="js/generateFormComponents.js"></script>
 	<script src="js/formDataToJson.js"></script>
-	<script src="js/exemptionQuizHandler.js"></script>
-	<script src="js/autoGenerateFields.js"></script>
+	<!-- <script src="js/exemptionQuizHandler.js"></script> -->
+	<!-- <script src="js/autoGenerateFields.js"></script> -->
 	
 	<!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
 	<script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=HHS&subagency=CMS&sitetopic=metadata&siteplatform=GitHubPages" id="_fed_an_ua_tag"></script>
 
 	<script type="text/javascript">
-		createFormComponents()
-			.then((components) => {
-				Formio.use(uswds);
-				Formio.createForm(document.getElementById("formio"), {
-					display: "form",
-					components: components,
-				}).then(function (form) {
-					window.formIOInstance = form;
+		document.addEventListener("DOMContentLoaded", () => {
+			createFormComponents()
+				.then((components) => {
+					Formio.use(uswds);
+					Formio.createForm(document.getElementById("formio"), {
+						display: "form",
+						components: components,
+					}).then(function (form) {
+						window.formIOInstance = form;
 
-					// form start must only fire once
-					let formStartFired = false;
-					form.on("focus", function () {
-						if (!formStartFired) {
-							formStartFired = true;
-							gas4('form_start', {
+						// form start must only fire once
+						let formStartFired = false;
+						form.on("focus", function () {
+							if (!formStartFired) {
+								formStartFired = true;
+								gas4('form_start', {
+									'form_name': 'code.json form',
+									'form_id': 'formio',
+									'form_destination': window.location.pathname
+								});
+							}
+						});
+
+						form.on("submit", function (submission) {
+							console.log("Form Submission here:", submission);
+							createCodeJson(submission.data);
+
+							gas4('form_submit', {
 								'form_name': 'code.json form',
 								'form_id': 'formio',
-								'form_destination': window.location.pathname
+								'form_destination': window.location.pathname,
+								'form_submit_text': 'Generate code.json metadata'
 							});
-						}
-					});
-
-					form.on("submit", function (submission) {
-						console.log("Form Submission here:", submission);
-						createCodeJson(submission.data);
-
-						gas4('form_submit', {
-							'form_name': 'code.json form',
-							'form_id': 'formio',
-							'form_destination': window.location.pathname,
-							'form_submit_text': 'Generate code.json metadata'
 						});
-					});
+					})
 				})
-			})
-			.catch((error) => {
-				console.error("Error creating components:", error);
+				.catch((error) => {
+					console.error("Error creating components:", error);
 			});
+		});
 	</script>
 </head>
 
@@ -76,28 +78,21 @@
 	<div id="form-header"></div>
 
 	<div id="formio"></div>
-
 	<!-- code.json Generated Output -->
-	<div id="output">
-		<label class="usa-label" for="json-result"><strong>Your response</strong></label>
-		<textarea class="usa-textarea" rows="30" id="json-result" name="json-result" readonly></textarea>
-		<div class="button-actions">
-			<button class="usa-button usa-button" type="button" href="#"
-				onclick="copyToClipboard(event)">Copy</button>
-			<button class="usa-button usa-button--secondary" type="button" href="#"
-				onclick="downloadFile(event)">Download</button>
-			<button class="usa-button usa-button--accent-cool" type="button" href="#"
-				onclick="createProjectPR(event)">Create
-				Pull
-				Request</button>
-			<button class="usa-button usa-button--accent-warm" type="button" href="#"
-				onclick="emailFile(event)">Email</button>
+		<div id="output">
+			<label class="usa-label" for="json-result"><strong>Your response</strong></label>
+			<textarea class="usa-textarea" rows="30" id="json-result" name="json-result" readonly></textarea>
+			<div class="button-actions">
+				<button class="usa-button usa-button" type="button" href="#"
+					onclick="copyToClipboard(event)">Copy</button>
+				<button class="usa-button usa-button--secondary" type="button" href="#"
+					onclick="downloadFile(event)">Download</button>
+				<button class="usa-button usa-button--accent-cool" type="button" href="#"
+					onclick="createGitHubIssueForm(event)">Create GitHub Issue</button>
+				<button class="usa-button usa-button--accent-warm" type="button" href="#"
+					onclick="emailFile(event)">Email</button>
+			</div>
 		</div>
-	</div>
-		
-		<!-- <button type="button" class="btn btn-outline" href="#" onclick="createAutoGitHubIssue(event)">Auto-Create Issue
-			(API Key Required)</button> -->
-		<!-- <button type="button" class="btn btn-outline" href="#" onclick="createProjectPR(event)">Create Pull Request</button> -->
 	</div>
 
 </body>
