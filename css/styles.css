@@ -6,7 +6,7 @@ textarea {
     margin-bottom: 10px;
 }
 
-#auto-generation {
+/* #auto-generation {
     border-radius: 15px;
     padding: 20px;
     padding-bottom: 25px;
@@ -16,7 +16,7 @@ textarea {
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
-}
+} */
 
 #github-url-form {
     margin-top: 25px;

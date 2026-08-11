@@ -205,7 +205,7 @@ async function createBranchOnProject(projectURL, token) {
 
 async function addFileToBranch(projectURL, token, JSONObj) {
 	const { owner, repo } = getOrgAndRepoArgsGitHub(projectURL);
-	const FILE_PATH = 'lodp-form.json'
+	const FILE_PATH = 'shareit-repo-discovery-form.json'
 	const createFileApiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`;
 	const encodedContent = btoa(JSONObj);
 	console.log("Content: ", encodedContent);
@@ -256,8 +256,8 @@ async function createPR(projectURL, token) {
 				'X-GitHub-Api-Version': "2022-11-28"
 			},
 			body: JSON.stringify({
-				title: "Add code-anti-data-call.json to Project",
-				body: "Add generated code-anti-data-call.json file to project. code-anti-data-call.json was generated via codejson-generator form site.",
+				title: "Add shareit-repo-discovery-form.json to Repository",
+				body: "Add generated shareit-repo-discovery-form.json file to project. shareit-repo-discovery-form.json was generated via shareit-repo-discovery-form form site.",
 				head: NEW_BRANCH,
 				base: 'main',
 
@@ -340,7 +340,7 @@ async function downloadFile(event) {
 	// Create anchor element and create download link
 	const link = document.createElement("a");
 	link.href = URL.createObjectURL(blob);
-	link.download = "lodp-form.json";
+	link.download = "shareit-repo-discovery-form.json";
 
 	// Trigger the download
 	link.click();
@@ -352,7 +352,7 @@ function generateIssueTitle(JSONObj) {
 	let localeString = now.toLocaleString();
 
 	// const submitterName = JSONObj["Name"] || "Anonymous";
-	return `Living HHS Open Data Plan Suggestions: ${localeString}`;
+	return `SHARE IT Repository Discovery Form Response: ${localeString}`;
 }
 
 // Creates Issue Body
@@ -365,21 +365,15 @@ function generateIssueBody(JSONObj) {
 	body += "Summary of Suggestions:\n\n";
 
 	const categories = [
-		"HHS Objectives, Values, and Return on Investment (ROI) with Data",
-		"Unified HHS for Data Sharing",
-		"Data Collection Processes for Open Formats",
-		"Data Usage Information",
-		"Prioritizing Public Data Asset Review",
-		"Improving Processes for Meeting Open Data Goals",
-		"Intra-HHS Data Sharing — Be the Change",
-		"Real-World Data for Impact",
-		"Public-Private Partnerships with Transparency to Accelerate Impact",
-		"Public Engagement with, by, and for We the People",
-		"Appendix A - Acronyms, Definitions, Keywords, and Concepts",
-        "Appendix B - Open Science Disclosure Risk Management (2019 NSTC SOS)",
-        "Appendix C - HHS Open Data Action Items with Timeline",
-        "Appendix D - HHS Partnerships with Transparency",
-        "Other"
+		"Repository Name",
+        "Repository URL",
+        "Repository Type",
+		"Fisma System Identifier",
+        "Repository Owner",
+        "Technical Custodian/Administrator",
+        "Operational Status",
+        "Contractor-Operated",
+        "Last Updated"
 	];
 
 	categories.forEach(category => {
@@ -436,12 +430,7 @@ async function createGitHubIssueForm(event) {
 
 // Create GitHub URL
 function createGitHubNewIssueURL(title, body) {
-	// const textArea = document.getElementById("json-result");
-	// const JSONObj = JSON.parse(textArea.value);
-	// const agency = JSONObj["HHS Division"];
-	// const match = agency.match(/\(([^)]+)\)/);
-
-	const baseURL = "https://github.com/HHS//living-hhs-open-data-plan/issues/new";
+	const baseURL = "https://github.com/HHS/shareit-repo-discovery-form/issues/new";
 	const params = new URLSearchParams({
 		title: title,
 		body: body,
@@ -492,7 +481,7 @@ async function createIssueOnGitHub(token, title, body) {
 	const agency = JSONObj["HHS Division"];
 	const match = agency.match(/\(([^)]+)\)/);
 
-	const createIssueAPIURL = "https://api.github.com/repos/HHS/living-hhs-open-data-plan/issues";
+	const createIssueAPIURL = "https://api.github.com/repos/HHS/shareit-repo-discovery-form/issues";
 
 	const response = await fetch(createIssueAPIURL,
 		{
@@ -541,8 +530,8 @@ async function emailFile(event) {
 
 		const jsonString = JSON.stringify(cleanData, null, 2);
 
-		const subject = "Living HHS Open Data Plan — Feedback to HHS";
-		const body = `Hello,\n\nI have submitted suggestions for Living HHS Open Data Plan:\n\n${jsonString}\n\nThank you!`;
+		const subject = "SHARE IT Repository Discovery Form — Response to HHS";
+		const body = `Hello,\n\nI have submitted a response for SHARE IT Repository Discovery Form:\n\n${jsonString}\n\nThank you!`;
 
 		// const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
 		const recipients = ["opensource@cms.hhs.gov"];
