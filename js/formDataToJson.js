@@ -78,6 +78,16 @@ function populateObject(data, schema) {
 			value = getSelectedOptions(value);
 		}
 
+		// Strip timestamp from date-only fields
+        const fieldSchema = schema.properties.items[key];
+        if (
+            fieldSchema?.format === "date" &&
+            typeof value === "string" &&
+            value.includes("T")
+        ) {
+            value = value.split("T")[0];
+        }
+
 		reorderedObject[key] = value;
 	}
 	return reorderedObject;

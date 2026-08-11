@@ -61,6 +61,9 @@ function determineType(field) {
 		if (field.format == "date-time") {
 			return "datetime";
 		}
+		if (field.format === "date") {
+        return "date";
+    	}
 		return "textfield";
 	}
 }
@@ -175,6 +178,34 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 				validate
 			};
 		case "datetime":
+			return {
+				label: fieldName,
+				tableView: false,
+				datePicker: {
+					disableWeekends: false,
+					disableWeekdays: false
+				},
+				enableTime: false,
+				validateWhenHidden: false,
+				key: fieldName,
+				type: "datetime",
+				input: true,
+				widget: {
+					type: "calendar",
+					displayInTimezone: "viewer",
+					locale: "en",
+					useLocaleSettings: false,
+					allowInput: true,
+					mode: "single",
+					noCalendar: false,
+					format: "yyyy-MM-dd",
+					disableWeekends: false,
+					disableWeekdays: false,
+				},
+				description: fieldObject["description"],
+				validate
+			};
+		case "date":
 			return {
 				label: fieldName,
 				tableView: false,

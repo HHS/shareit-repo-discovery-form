@@ -6,6 +6,22 @@ textarea {
     margin-bottom: 10px;
 }
 
+/* Hide the broken default icon */
+.formio-component-datetime .input-group-append .input-group-text i {
+    display: none;
+}
+
+/* Inject an SVG calendar icon via CSS */
+.formio-component-datetime .input-group-append .input-group-text::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23005ea2'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 #auto-generation {
     border-radius: 15px;
     padding: 20px;

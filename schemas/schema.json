@@ -56,6 +56,7 @@
             },
             "Last Updated": {
                 "type": "string",
+                "format": "date",
                 "description": "Date when the repository was last updated"
             }
         }
