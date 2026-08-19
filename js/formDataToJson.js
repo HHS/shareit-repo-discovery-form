@@ -115,11 +115,15 @@ async function createCodeJson(data) {
 	delete data.submit;
 	const codeJson = await populateCodeJson(data);
 
+	// This is not needed in this form, but can be used to store the API key for future use if needed.
 	window.gh_api_key = data['gh_api_key']
 	console.log(window.gh_api_key)
 
 	const jsonString = JSON.stringify(codeJson, null, 2);
 	document.getElementById("json-result").value = jsonString;
+
+	// Reveal the output section
+	document.getElementById("output").hidden = false;
 }
 
 function checkIfResponseGenerated() {
@@ -378,11 +382,11 @@ function generateIssueBody(JSONObj) {
 		"Repository Name",
         "Repository URL",
         "Repository Type",
-		"Fisma System Identifier",
+		"FISMA System Identifier",
         "Repository Owner",
         "Technical Custodian/Administrator",
-        "Operational Status",
-        "Contractor-Operated",
+        "Status",
+        "Contractor Status",
         "Last Updated"
 	];
 
