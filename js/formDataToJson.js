@@ -382,11 +382,11 @@ function generateIssueBody(JSONObj) {
 		"Repository Name",
         "Repository URL",
         "Repository Type",
-		"Fisma System Identifier",
+		"FISMA System Identifier",
         "Repository Owner",
         "Technical Custodian/Administrator",
-        "Operational Status",
-        "Contractor-Operated",
+        "Status",
+        "Contractor Status",
         "Last Updated"
 	];
 
