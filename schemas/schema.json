@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "<h1>SHARE IT Source Code Repository Discovery Form</h1>",
-    "description": "<p>This intake form serves as a simple registry for gathering basic information about a source code repository. Responses will be used by the HHS to help repository managers and owners comply with the <strong>SHARE IT Act of 2024</strong>.<h3>Please fill in the repository information below for each question, and then click the 'Generate your response!' button.</h3><h4>Once your response is generated, you can:</h4><ul><li>Copy the response from the text box and paste it into your own email to be sent to our team</li><li>Download the response as a text file</li><li>Create a GitHub issue by clicking the 'Create a GitHub Issue' button</li><li>Click the 'Email' button to open your default email client with the response pre-filled in the body of the email</li></ul>",
+    "description": "<p>This intake form serves as a simple registry for gathering basic information about a source code repository. Responses will be used by HHS to help repository managers and owners comply with the <strong>SHARE IT Act of 2024</strong>.<h3>Please fill in the repository information below for each question, and then click the 'Generate your response!' button.</h3><h4>Once your response is generated, you can:</h4><ul><li>Copy the response from the text box and paste it into your own email to be sent to our team</li><li>Download the response as a text file</li><li>Create a GitHub issue by clicking the 'Create a GitHub Issue' button</li><li>Click the 'Email' button to open your default email client with the response pre-filled in the body of the email</li></ul>",
     "type": "object",
     "properties": {
         "items": {
