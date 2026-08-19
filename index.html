@@ -74,27 +74,22 @@
 </head>
 
 <body>
-	
 	<div id="form-header"></div>
-
 	<div id="formio"></div>
 	<!-- code.json Generated Output -->
-		<div id="output">
-			<label class="usa-label" for="json-result"><strong>Your response</strong></label>
-			<textarea class="usa-textarea" rows="30" id="json-result" name="json-result" readonly></textarea>
-			<div class="button-actions">
-				<button class="usa-button usa-button" type="button" href="#"
-					onclick="copyToClipboard(event)">Copy</button>
-				<button class="usa-button usa-button--secondary" type="button" href="#"
-					onclick="downloadFile(event)">Download</button>
-				<button class="usa-button usa-button--accent-cool" type="button" href="#"
-					onclick="createGitHubIssueForm(event)">Create GitHub Issue</button>
-				<button class="usa-button usa-button--accent-warm" type="button" href="#"
-					onclick="emailFile(event)">Email</button>
-			</div>
+	<div id="output" hidden>
+		<label class="usa-label" for="json-result"><strong>Your response</strong></label>
+		<textarea class="usa-textarea" rows="30" id="json-result" name="json-result" readonly></textarea>
+		<div class="button-actions">
+			<button class="usa-button usa-button" type="button" href="#"
+				onclick="copyToClipboard(event)">Copy</button>
+			<button class="usa-button usa-button--secondary" type="button" href="#"
+				onclick="downloadFile(event)">Download</button>
+			<button class="usa-button usa-button--accent-cool" type="button" href="#"
+				onclick="createGitHubIssueForm(event)">Create GitHub Issue</button>
+			<button class="usa-button usa-button--accent-warm" type="button" href="#"
+				onclick="emailFile(event)">Email</button>
 		</div>
 	</div>
-
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "SHARE IT Source Code Repository Discovery Form",
-    "description": "<p>This intake form serves as a simple registry for gathering basic informtion about a source code repository. Responses will be used the agency to help repository managers and owners comply with the SHARE IT Act of 2024.</p>",
+    "title": "<h1>SHARE IT Source Code Repository Discovery Form</h1>",
+    "description": "<p>This intake form serves as a simple registry for gathering basic information about a source code repository. Responses will be used by the NIH to help repository managers and owners comply with the <strong>SHARE IT Act of 2024</strong>.<h3>Please fill in the repository information below for each question, and then click the 'Generate your response!' button.</h3><h4>Once your response is generated, you can:</h4><ul><li>Copy the response from the text box and paste it into your own email to be sent to our team</li><li>Download the response as a text file</li><li>Create a GitHub issue by clicking the 'Create a GitHub Issue' button</li><li>Click the 'Email' button to open your default email client with the response pre-filled in the body of the email</li></ul>",
     "type": "object",
     "properties": {
         "items": {
@@ -24,9 +24,9 @@
                     "Other"
                 ]
             },
-            "Fisma System Identifier (if applicable)": {
+            "FISMA System Identifier (if applicable)": {
                 "type": "string",
-                "description": "Fisma System Identifier (if applicable)"
+                "description": "Please provide the FISMA System Identifier"
             },
             "Repository Owner": {
                 "type": "string",
@@ -36,22 +36,26 @@
                 "type": "string",
                 "description": "Name of the technical custodian or administrator"
             },
-            "Operational Status": {
+            "Status": {
                 "type": "string",
-                "description": "Operational status of the repository",
+                "description": "Development Status of the repository",
                 "enum": [
-                    "Active",
-                    "Maintenance",
-                    "Archived",
+                    "Ideation",
+                    "Development",
+                    "Alpha",
+                    "Beta",
+                    "Release Candidate",
+                    "Production",
+                    "Archival",
                     "Retired"
                 ]
             },
-            "Contractor-Operated": {
+            "Contractor Status": {
                 "type": "string",
-                "description": "Indicates if the repository is contractor-operated",
+                "description": "Indicates if the repository is operated by an employee or a contractor",
                 "enum": [
-                    "Yes",
-                    "No"
+                    "Employee Operated",
+                    "Contractor Operated"
                 ]
             },
             "Last Updated": {
@@ -67,8 +71,8 @@
         "Repository Type",
         "Repository Owner",
         "Technical Custodian/Administrator",
-        "Operational Status",
-        "Contractor-Operated",
+        "Status",
+        "Contractor Status",
         "Last Updated"
     ]
 
