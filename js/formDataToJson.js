@@ -444,7 +444,7 @@ async function createGitHubIssueForm(event) {
 
 // Create GitHub URL
 function createGitHubNewIssueURL(title, body) {
-	const baseURL = "https://github.com/HHS/shareit-repo-discovery-form/issues/new";
+	const baseURL = "https://github.com/HHS/shareit-repo-discovery-form-inventory/issues/new";
 	const params = new URLSearchParams({
 		title: title,
 		body: body,
@@ -495,7 +495,7 @@ async function createIssueOnGitHub(token, title, body) {
 	const agency = JSONObj["HHS Division"];
 	const match = agency.match(/\(([^)]+)\)/);
 
-	const createIssueAPIURL = "https://api.github.com/repos/HHS/shareit-repo-discovery-form/issues";
+	const createIssueAPIURL = "https://api.github.com/repos/HHS/shareit-repo-discovery-form-inventory/issues";
 
 	const response = await fetch(createIssueAPIURL,
 		{
