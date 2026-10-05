@@ -13,17 +13,6 @@
                 "type": "string",
                 "description": "URL of the repository where the feedback is submitted"
             },
-            "Repository Type": {
-                "type": "string",
-                "description": "Type of repository where the feedback is submitted",
-                "enum": [
-                    "Source Code",
-                    "Infrastructure-as-code",
-                    "Scripts",
-                    "Documentation",
-                    "Other"
-                ]
-            },
             "FISMA System Identifier (if applicable)": {
                 "type": "string",
                 "description": "Please provide the FISMA System Identifier"
@@ -46,8 +35,23 @@
                     "Beta",
                     "Release Candidate",
                     "Production",
-                    "Archival",
-                    "Retired"
+                    "Archival"
+                ]
+            },
+            "Repository Type": {
+                "type": "string",
+                "description": "Type of repository where the feedback is submitted",
+                "enum": [
+                    "standalone/mobile",
+                    "standalone/iot",
+                    "standalone/desktop",
+                    "standalone/web",
+                    "standalone/backend",
+                    "standalone/other",
+                    "infrastructure-as-code",
+                    "library",
+                    "configurationFiles",
+                    "other"
                 ]
             },
             "Contractor Status": {
